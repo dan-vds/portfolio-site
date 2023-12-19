@@ -18,21 +18,66 @@
                 </ul>
             </nav>
             <div class="header-text">
-                <p> Hi. I'm</p> 
-                <p style="color: #fa5b0f">  Daniel.</p>
+                <div class="header-text-large">
+                    <p> Hi. I'm</p> 
+                    <p style="color: #fa5b0f">  Daniel.</p>
+                </div>
+                <div class="header-text-info">
+                    <p> I'm a third-year software engineering student at the University of Auckland.</p>
+                    <br>
+                    <p> I'm also a part-time web developer for Speech NZ</p>
+                </div>
             </div>
-            <div class="header-text-info">
-                <p> I'm a third-year software engineering student at the University of Auckland.</p>
-                <br>
-                <p> I'm also a part-time web developer for Speech NZ</p>
-        </div>
     </div>
     <div id="about">
         <div class="container">
-            <div class="row"></div>
-            <div class="about-col-1"></div>
-            <div class="about-col-2"></div>
+            <div class="row">
+            <div class="about-col-1">
+                
+            </div>
+            <div class="about-col-2">
+                <h1> About Me</h1>
+                <p>Im a third year blah blah blah</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+                <div class="tab-contents active" id="education">
+                    <ul>
+                        <li><span>PNBHS</span><br>High School</li>
+                        <li><span>University of Auckland</span><br>Software Engineering</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023-ongoing</span><br>Speech NZ</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>Java</span><br>Proficient</li>
+                        <li><span>C</span><br>Proficient</li>
+                    </ul>
+                </div>
+
+            </div>
+            </div>
         </div>
     </div>
+    <script>
+        function opentab(tabName){
+            var i, contents;
+            contents = document.getElementsByClassName("tab-contents");
+
+            for(i = 0; i < contents.length; i++){
+                contents[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementsByClassName("tab-links active")[0].className = "tab-links";
+            event.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
